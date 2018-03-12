@@ -1,19 +1,18 @@
 from .base import *
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '.elasticbeanstalk.com',
 ]
-WSGI_APPLICATION = 'config.wsgi.dev.application'
+WSGI_APPLICATION = 'config.wsgi.production.application'
 INSTALLED_APPS += [
-    'django_extensions',
     'storages',
 ]
 
 # Database
-secrets = json.loads(open(SECRETS_DEV, 'rt').read())
+secrets = json.loads(open(SECRETS_PRODUCTION, 'rt').read())
 # DATABASES = secrets['DATABASES']
 set_config(secrets, module_name=__name__, start=True)
 

@@ -37,6 +37,7 @@ SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
 SECRETS_BASE = os.path.join(SECRETS_DIR, 'base.json')
 SECRETS_LOCAL = os.path.join(SECRETS_DIR, 'local.json')
 SECRETS_DEV = os.path.join(SECRETS_DIR, 'dev.json')
+SECRETS_PRODUCTION = os.path.join(SECRETS_DIR, 'production.json')
 
 secrets = json.loads(open(SECRETS_BASE, 'rt').read())
 
@@ -109,9 +110,8 @@ setattr(sys.modules[__name__], 'raven', importlib.import_module('raven'))
 set_config(secrets, module_name=__name__, start=True)
 
 # AWS
-AWS_DEFAULT_ACL = 'private'
-AWS_S3_REGION_NAME = 'ap-northeast-2'
-AWS_S3_SIGNATURE_VERSION = 's3v4'
+# AWS_DEFAULT_ACL = 'private'
+
 
 # base.json 파일을 읽어온 결과
 # f = open(SECRETS_BASE, 'rt')
