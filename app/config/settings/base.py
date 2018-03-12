@@ -108,6 +108,10 @@ def set_config(obj, module_name=None, start=False):
 setattr(sys.modules[__name__], 'raven', importlib.import_module('raven'))
 set_config(secrets, module_name=__name__, start=True)
 
+# AWS
+AWS_DEFAULT_ACL = 'private'
+AWS_S3_REGION_NAME = 'ap-northeast-2'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 # base.json 파일을 읽어온 결과
 # f = open(SECRETS_BASE, 'rt')
