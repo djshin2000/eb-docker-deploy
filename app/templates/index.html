@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css" integrity="" crossorigin="">
+</head>
+<body>
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Username</th>
+        <th scope="col">Nickname</th>
+        <th scope="col">Profile Img</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in user_list %}
+      <tr>
+        <th scope="row">{{ user.pk }}</th>
+        <td>{{ user.username }}</td>
+        <td>{{ user.nickname}}</td>
+        <td>
+          {% if user.img_profile %}
+          <img src="{{ user.img_profile.url }}" alt="" style="height:100px;">
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

@@ -32,6 +32,9 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
+# templates 폴더 경로
+TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
 SECRETS_BASE = os.path.join(SECRETS_DIR, 'base.json')
@@ -153,7 +156,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            TEMPLATES_DIRS,
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
