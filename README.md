@@ -6,5 +6,5 @@ AWS의 Elasticbeanstalk 배포를 연습하는 프로젝트입니다.
 ### eb 배포 방법
 
 ```
-git add -f .secrets && eb deploy --staged && git reset HEAD .secrets
+git add -f .secrets && eb deploy --staged --profile=eb && git reset HEAD .secrets
 ```
